@@ -1,0 +1,24 @@
+<div class="top"></div>
+<div class="errImage">
+
+    <img src="assets/img/zensarlogo.png " height="100px" width="200px">
+</div>
+<div class="container">
+    <form>
+        <div style="max-width:300px; margin:auto">
+            <div class="input-icons">
+                <br>
+
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="text" placeholder="username" type="text" #u1><br><br>
+                <i class="fa fa-user icon"></i>
+                <input class="input-field" type="password" placeholder="password" #p2 /><br>
+            </div>
+        </div>
+
+        <br>
+        <div>
+            <button (click)="check(u1.value, p2.value)" type="submit" class="btn btn-primary">Login </button><br></div>
+        <br />
+    </form>
+</div>

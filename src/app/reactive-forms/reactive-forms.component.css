@@ -1,0 +1,18 @@
+ 
+
+  table, th, td {
+    text-align: center;
+    border: 1px solid black;
+    border-collapse: collapse;
+    vertical-align: bottom;
+    padding: 25px;
+    width: 50px;
+    height: 40px;
+   
+  }
+  h2{
+    color: black;
+    text-shadow: 7px 7px 2px gray;
+    text-align: center
+  }
+  

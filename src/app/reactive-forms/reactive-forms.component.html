@@ -1,0 +1,57 @@
+<br><br><br>
+   <div class="container">
+   <div class="jumbotron " >
+    <h2>REGISTRATION FORM</h2>
+    <form novalidate [formGroup]="form" (ngSubmit)="addUser(form)">
+
+      <div class="form-group">
+       <label> FirstName: </label>
+        <input type="text" formControlName="name" class="form-control" ngModel name="name"  autocomplete="off">
+      </div>
+
+      <div *ngIf="form.get('name').touched && form.get('name').invalid " class="alert alert-danger">
+        <div *ngIf="form.get('name').hasError('required')"> FirstName is required </div>
+        <div *ngIf="form.get('name').hasError('pattern')"> Invalid Name! </div>
+      </div>
+
+      <div class="form-group">
+        <label> LastName: </label>
+        <input type="text" formControlName="lname" class="form-control" required ngModel name="lname"  autocomplete="off"> </div>
+
+      <div *ngIf="form.get('lname').touched && form.get('lname').invalid " class="alert alert-danger">
+        <div *ngIf="form.get('lname').hasError('required')"> LastName is required </div>
+        <div *ngIf="form.get('lname').hasError('pattern')"> Invalid LastName! </div>
+      </div>
+
+      <div class="form-group">
+        <label>Age: </label>
+        <input type="text"  formControlName="Age"  class="form-control" ngModel name="Age" autocomplete="off"> </div>
+  
+      <div *ngIf="form.get('Age').touched && form.get('Age').invalid " class="alert alert-danger">
+        <div *ngIf="form.get('Age').hasError('required')"> Age is required </div>
+        <div *ngIf="form.get('Age').hasError('pattern')"> Invalid Age! </div>
+      </div>
+
+      <button type="submit" name="button" [disabled]="form.invalid" class="btn btn-primary">Add User</button>
+
+    </form>
+  </div>
+</div>
+
+<table style="width:100%">
+
+  <tr>
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+  </tr>
+
+  <tr *ngFor="let user of userList; let i = index;">
+    <td>{{user.name}}</td>
+
+    <td>{{user.lname}}</td>
+
+    <td>{{user.Age}}</td>
+  </tr>
+
+</table> 
